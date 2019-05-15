@@ -84,6 +84,7 @@ set statusline=(Vide)\ \ %<%f
 set statusline+=%w%h%m%r                 
 set statusline+=\ %{getcwd()}
 set statusline+=\ [%{&ff}:%{&fenc}:%Y]
+set statusline+=\ [%{gitbranch#name()}]
 set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 
 "
@@ -91,7 +92,6 @@ set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 "
 call plug#begin('~/.vim/plug')
 Plug 'airblade/vim-gitgutter'
-Plug 'alvan/vim-php-manual'
 Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'godlygeek/tabular'
@@ -103,12 +103,26 @@ Plug 'scrooloose/nerdtree'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-commentary'
 Plug 'vim-syntastic/syntastic'
+Plug 'ervandew/supertab'
+Plug 'Valloric/YouCompleteMe'
+Plug 'SirVer/ultisnips'
+Plug 'itchyny/vim-gitbranch'
 call plug#end()
 
 let g:vim_markdown_folding_disabled = 1
 let g:gitgutter_max_signs=10000
 
-"
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
 " syntastic
 "
 let g:syntastic_always_populate_loc_list = 1
