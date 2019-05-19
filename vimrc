@@ -100,15 +100,16 @@ Plug 'scrooloose/nerdtree'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-commentary'
 Plug 'vim-syntastic/syntastic'
+"Plug 'Valloric/YouCompleteMe'
 "Plug 'ervandew/supertab'
 "Plug 'Valloric/YouCompleteMe'
+"Plug 'SirVer/ultisnips'
 Plug 'itchyny/vim-gitbranch'
 call plug#end()
 
 let g:vim_markdown_folding_disabled = 1
 let g:gitgutter_max_signs=10000
 
-" syntastic
 "
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_quiet_messages = { "level": "errors" }

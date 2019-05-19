@@ -1,4 +1,4 @@
-![screenshots](https://github.com/SMILEORIGIN/imgs/blob/master/vim-vide/screenshots.png)
+![screenshots](./img/screenshots.png)
 
 目录
 ===
@@ -8,6 +8,9 @@
 
 <!-- vim-markdown-toc GFM -->
 
+* [交流群](#交流群)
+    * [QQ交流群](#qq交流群)
+    * [Telegram](#telegram)
 * [Install (安装)](#install-安装)
 * [Upgrade Plugins (升级插件)](#upgrade-plugins-升级插件)
 * [Features (特色功能)](#features-特色功能)
@@ -45,6 +48,18 @@
 
 <!-- vim-markdown-toc -->
 </details>
+
+## 交流群
+
+### QQ交流群
+
+群号：1019096841  
+扫码进群：  
+![QQ Group QR Code](./img/QR.png)
+
+### Telegram
+
+Channel Invite via Link: [https://t.me/joinchat/AAAAAFenzdpRz4RqRduUOg](https://t.me/joinchat/AAAAAFenzdpRz4RqRduUOg)
 
 ## Install (安装)
 
