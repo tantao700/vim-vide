@@ -8,9 +8,6 @@
 
 autocmd BufNewFile *.lua,*.sh,*.php 0r !~/.vim/template.sh %:e
 autocmd BufRead,BufNewFile *.conf setfiletype conf
-autocmd BufRead *.php set includeexpr=substitute(v:fname,'\\\','/','g')
-autocmd BufRead *.php set include=^#\s*use
-autocmd BufRead *.php set suffixesadd+=.php
 autocmd BufWinEnter *.volt,*.tp,*.mako set filetype=html
 autocmd BufWinEnter *.sls set filetype=yaml
 autocmd GUIEnter * silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
@@ -34,7 +31,6 @@ nmap <leader>h :set filetype=html       <CR>
 nmap <leader>j :set filetype=javascript <CR>
 nmap <leader>l :set filetype=lua        <CR>
 nmap <leader>m :set filetype=markdown   <CR>
-nmap <leader>p :set filetype=php        <CR>
 nmap <leader>s :set filetype=sh         <CR>
 nmap <leader>t :set filetype=txt        <CR>
 nmap <leader>v :set filetype=vim        <CR>
@@ -62,7 +58,7 @@ set pastetoggle=<F5>
 set path+=./model/,./ctrl/,./lib/,*/templates/,*/static/,..,*/src/main/java/
 set printoptions=formfeed:y,header:0,paper:A4,duplex:off,syntax:n
 set scrolloff=1                             
-set shell=/bin/bash
+set shell=/bin/zsh
 set nocompatible               
 set showcmd                                 " Show cmd in vim-cmdline.
 set t_Co=256                                " Make vim look better in putty.
@@ -84,6 +80,7 @@ set statusline=(Vide)\ \ %<%f
 set statusline+=%w%h%m%r                 
 set statusline+=\ %{getcwd()}
 set statusline+=\ [%{&ff}:%{&fenc}:%Y]
+set statusline+=\ [%{gitbranch#name()}]
 set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 
 "
@@ -91,7 +88,7 @@ set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 "
 call plug#begin('~/.vim/plug')
 Plug 'airblade/vim-gitgutter'
-Plug 'alvan/vim-php-manual'
+Plug 'tpope/vim-fugitive'
 Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'godlygeek/tabular'
@@ -103,12 +100,14 @@ Plug 'scrooloose/nerdtree'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-commentary'
 Plug 'vim-syntastic/syntastic'
+"Plug 'ervandew/supertab'
+"Plug 'Valloric/YouCompleteMe'
+Plug 'itchyny/vim-gitbranch'
 call plug#end()
 
 let g:vim_markdown_folding_disabled = 1
 let g:gitgutter_max_signs=10000
 
-"
 " syntastic
 "
 let g:syntastic_always_populate_loc_list = 1
