@@ -80,7 +80,7 @@ set statusline=(Vide)\ \ %<%f
 set statusline+=%w%h%m%r                 
 set statusline+=\ %{getcwd()}
 set statusline+=\ [%{&ff}:%{&fenc}:%Y]
-set statusline+=\ [%{gitbranch#name()}]
+set statusline+=\ [git:%{gitbranch#name()}]
 set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 
 "
