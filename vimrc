@@ -61,6 +61,7 @@ set scrolloff=1
 set shell=/bin/zsh
 set nocompatible               
 set showcmd                                 " Show cmd in vim-cmdline.
+set list lcs=tab:\|\                        " fix indent not display in golang
 set t_Co=256                                " Make vim look better in putty.
 set textwidth=0
 set undodir=~/.vimtmp/undodir 
@@ -100,7 +101,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-commentary'
 Plug 'vim-syntastic/syntastic'
-"Plug 'Valloric/YouCompleteMe'
+Plug 'Yggdroot/indentLine'
 "Plug 'ervandew/supertab'
 "Plug 'Valloric/YouCompleteMe'
 "Plug 'SirVer/ultisnips'
@@ -109,6 +110,10 @@ call plug#end()
 
 let g:vim_markdown_folding_disabled = 1
 let g:gitgutter_max_signs=10000
+let g:indentLine_setColors = 0
+let g:indentLine_conceallevel=2
+let g:indentLine_bgcolor_term = 202
+let g:indentLine_bgcolor_gui = '#FF5F00'
 
 "
 let g:syntastic_always_populate_loc_list = 1
